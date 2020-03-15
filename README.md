@@ -4,7 +4,7 @@ A CLI tool for tarot reading with full ASCII art deck \*:･ﾟ✧\*:･ﾟ✧
 
 ## Installation
 
-`npm install ascii-tarot`
+`npm install -g ascii-tarot`
 
 Choose one card, three cards, or celtic cross. Reversed cards are possible.
 
