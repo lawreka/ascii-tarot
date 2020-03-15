@@ -1,0 +1,19 @@
+{
+    "name": "tarot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "bin/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "kathryn isabelle (kathrynisabelle.com)",
+    "license": "MIT",
+    "bin": {
+        "ascii-tarot": "./bin/index.js"
+    },
+    "dependencies": {
+        "cli-frames": "^2.2.9",
+        "inquirer": "^7.1.0"
+    }
+}
