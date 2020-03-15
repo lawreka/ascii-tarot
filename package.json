@@ -6,9 +6,14 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": [],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lawreka/ascii-tarot"
+    },  
+    "keywords": ["tarot", "ascii", "cli"],
     "author": "kathryn isabelle (kathrynisabelle.com)",
     "license": "MIT",
+    "homepage": "https://github.com/lawreka/ascii-tarot",
     "bin": {
         "ascii-tarot": "./bin/index.js"
     },
