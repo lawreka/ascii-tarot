@@ -1,6 +1,6 @@
-<img src='ascii-tarot.png' />
-
 A CLI tool for tarot reading with full ASCII art deck \*:･ﾟ✧\*:･ﾟ✧
+
+<img src='ascii-tarot.png' />
 
 ## Installation
 
