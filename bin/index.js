@@ -47,14 +47,21 @@ function displayCard(x) {
     console.log(deck[x].card);
 }
 
-function pickCard(message) {
+function pickCard(message, chosenCard) {
     setTimeout(function() {
         console.log(message);
         setTimeout(function() {
-            const chosenCard = Math.floor(Math.random() * deck.length);
             displayCard(chosenCard);
         }, 1000);
     }, 1000);
+}
+
+function pickCardNumber(cardsAlreadyDrawn = new Set([])) {
+    const chosenCard = Math.floor(Math.random() * deck.length);
+    while (cardsAlreadyDrawn.has(chosenCard))  {
+        chosenCard = Math.floor(Math.random() * deck.length);
+    }
+    return chosenCard;
 }
 
 function end() {
@@ -76,21 +83,28 @@ function displaySpread(type) {
     switch (type) {
         case 'One card':
             loader.start();
-            pickCard('Your card is:');
+            pickCard('Your card is:', pickCardNumber());
             setTimeout(() => {
                 end();
             }, 5000);
             return;
         case 'Three cards':
             loader.start();
-            pickCard('Past:');
+            pickedCards = new Set([]);
+            pastCard = pickCardNumber(pickedCards);
+            pickCard('Past:', pastCard);
+            pickedCards.add(pastCard);
             setTimeout(function(){
                 loader.start();
-                pickCard('Present:');
+                presentCard = pickCardNumber(pickedCards);
+                pickCard('Present:', presentCard);
+                pickedCards.add(presentCard);
             }, 3000);
             setTimeout(function(){
                 loader.start();
-                pickCard('Future:');
+                futureCard = pickCardNumber(pickedCards);
+                pickCard('Future:', futureCard);
+                pickedCards.add(futureCard);
             }, 6000);
             setTimeout(() => {
                 end();
@@ -98,42 +112,63 @@ function displaySpread(type) {
             return;
         case 'Celtic cross':
             loader.start();
-            pickCard('Yourself:');
+            pickedCards = new Set([]);
+            card = pickCardNumber(pickedCards);
+            pickCard('Yourself:', card);
+            pickedCards.add(card);
             setTimeout(function(){
                 loader.start();
-                pickCard('Your obstacle:');
+                card = pickCardNumber(pickedCards);
+                pickCard('Your obstacle:', card);
+                pickedCards.add(card);
             }, 4000);
             setTimeout(function(){
                 loader.start();
-                pickCard('Root of the question:');
+                card = pickCardNumber(pickedCards);
+                pickCard('Root of the question:', card);
+                pickedCards.add(card);
             }, 8000);
             setTimeout(function(){
                 loader.start();
-                pickCard('The past:');
+                card = pickCardNumber(pickedCards);
+                pickCard('The past:', card);
+                pickedCards.add(card);
             }, 12000);
             setTimeout(function(){
                 loader.start();
-                pickCard('Hopes/fears:');
+                card = pickCardNumber(pickedCards);
+                pickCard('Hopes/fears:', card);
+                pickedCards.add(card);
             }, 16000);
             setTimeout(function(){
                 loader.start();
-                pickCard('The future:');
+                card = pickCardNumber(pickedCards);
+                pickCard('The future:', card);
+                pickedCards.add(card);
             }, 20000);
             setTimeout(function(){
                 loader.start();
-                pickCard('The root of the outcome:');
+                card = pickCardNumber(pickedCards);
+                pickCard('The root of the outcome:', card);
+                pickedCards.add(card);
             }, 24000);
             setTimeout(function(){
                 loader.start();
-                pickCard('Others in the outcome:');
+                card = pickCardNumber(pickedCards);
+                pickCard('Others in the outcome:', card);
+                pickedCards.add(card);
             }, 28000);
             setTimeout(function(){
                 loader.start();
-                pickCard('Hopes/fears for outcome:');
+                card = pickCardNumber(pickedCards);
+                pickCard('Hopes/fears for outcome:', card);
+                pickedCards.add(card);
             }, 32000);
             setTimeout(function(){
                 loader.start();
-                pickCard('Outcome:');
+                card = pickCardNumber(pickedCards);
+                pickCard('Outcome:', card);
+                pickedCards.add(card);
             }, 36000);
             setTimeout(() => {
                 end();
