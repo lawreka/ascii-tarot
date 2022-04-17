@@ -1,6 +1,6 @@
 {
     "name": "ascii-tarot",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "",
     "main": "bin/index.js",
     "scripts": {
@@ -9,8 +9,12 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/lawreka/ascii-tarot"
-    },  
-    "keywords": ["tarot", "ascii", "cli"],
+    },
+    "keywords": [
+        "tarot",
+        "ascii",
+        "cli"
+    ],
     "author": "kathryn isabelle (kathrynisabelle.com)",
     "license": "MIT",
     "homepage": "https://github.com/lawreka/ascii-tarot",
