@@ -26,7 +26,7 @@ const pickspread = [
         type: 'list',
         name: 'spread',
         message: 'Select your spread',
-        choices: ['One card', 'Three cards', 'Celtic cross', 'Show me the deck'],
+        choices: ['One card', 'Three cards', 'Five cards', 'Celtic cross', 'Show me the deck'],
         filter: function(val) {
             return val;
         }
@@ -95,6 +95,29 @@ function displaySpread(type) {
             setTimeout(() => {
                 end();
             }, 11000);
+            return;
+        case 'Five cards':
+            loader.start();
+            pickCard('The current situation:');
+            setTimeout(function () {
+                loader.start();
+                pickCard('Your obstacle:');
+            }, 4000);
+            setTimeout(function () {
+                loader.start();
+                pickCard('In your favour:');
+            }, 8000);
+            setTimeout(function () {
+                loader.start();
+                pickCard('Outcome:');
+            }, 12000);
+            setTimeout(function () {
+                loader.start();
+                pickCard('Key to interpretation:');
+            }, 16000);
+            setTimeout(() => {
+                end();
+            }, 21000);
             return;
         case 'Celtic cross':
             loader.start();
